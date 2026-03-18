@@ -33,7 +33,7 @@
 #define SAME_ENDIANNESS      0
 #define REVERSE_ENDIANNESS   1
 
-char plc_program_md5[] = "769c0c82f2eed767ed2c37b1a4b19dc2";
+char plc_program_md5[] = "c050ad3ef6f26c62b3fcf0dafcfb75f8";
 
 uint8_t endianness;
 
@@ -44,6 +44,17 @@ static const struct {
     void *ptr;
     __IEC_types_enum type;
 } debug_vars[] = {
+    {&(RES0__INSTANCE0.DELAY), TIME_ENUM},
+    {&(RES0__INSTANCE0.TON0.EN), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TON0.ENO), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TON0.IN), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TON0.PT), TIME_ENUM},
+    {&(RES0__INSTANCE0.TON0.Q), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TON0.ET), TIME_ENUM},
+    {&(RES0__INSTANCE0.TON0.STATE), SINT_ENUM},
+    {&(RES0__INSTANCE0.TON0.PREV_IN), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TON0.CURRENT_TIME), TIME_ENUM},
+    {&(RES0__INSTANCE0.TON0.START_TIME), TIME_ENUM},
     {&(RES0__INSTANCE0.TOF0.EN), BOOL_ENUM},
     {&(RES0__INSTANCE0.TOF0.ENO), BOOL_ENUM},
     {&(RES0__INSTANCE0.TOF0.IN), BOOL_ENUM},
@@ -64,47 +75,6 @@ static const struct {
     {&(RES0__INSTANCE0.TOF1.PREV_IN), BOOL_ENUM},
     {&(RES0__INSTANCE0.TOF1.CURRENT_TIME), TIME_ENUM},
     {&(RES0__INSTANCE0.TOF1.START_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF2.EN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF2.ENO), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF2.IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF2.PT), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF2.Q), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF2.ET), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF2.STATE), SINT_ENUM},
-    {&(RES0__INSTANCE0.TOF2.PREV_IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF2.CURRENT_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF2.START_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON1.EN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON1.ENO), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON1.IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON1.PT), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON1.Q), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON1.ET), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON1.STATE), SINT_ENUM},
-    {&(RES0__INSTANCE0.TON1.PREV_IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON1.CURRENT_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON1.START_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF3.EN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF3.ENO), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF3.IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF3.PT), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF3.Q), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF3.ET), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF3.STATE), SINT_ENUM},
-    {&(RES0__INSTANCE0.TOF3.PREV_IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TOF3.CURRENT_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TOF3.START_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON2.EN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON2.ENO), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON2.IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON2.PT), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON2.Q), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON2.ET), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON2.STATE), SINT_ENUM},
-    {&(RES0__INSTANCE0.TON2.PREV_IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON2.CURRENT_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON2.START_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.SEKUNDA), TIME_ENUM},
     {&(RES0__INSTANCE0.TON3.EN), BOOL_ENUM},
     {&(RES0__INSTANCE0.TON3.ENO), BOOL_ENUM},
     {&(RES0__INSTANCE0.TON3.IN), BOOL_ENUM},
@@ -115,16 +85,16 @@ static const struct {
     {&(RES0__INSTANCE0.TON3.PREV_IN), BOOL_ENUM},
     {&(RES0__INSTANCE0.TON3.CURRENT_TIME), TIME_ENUM},
     {&(RES0__INSTANCE0.TON3.START_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON4.EN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON4.ENO), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON4.IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON4.PT), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON4.Q), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON4.ET), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON4.STATE), SINT_ENUM},
-    {&(RES0__INSTANCE0.TON4.PREV_IN), BOOL_ENUM},
-    {&(RES0__INSTANCE0.TON4.CURRENT_TIME), TIME_ENUM},
-    {&(RES0__INSTANCE0.TON4.START_TIME), TIME_ENUM},
+    {&(RES0__INSTANCE0.TOF2.EN), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TOF2.ENO), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TOF2.IN), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TOF2.PT), TIME_ENUM},
+    {&(RES0__INSTANCE0.TOF2.Q), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TOF2.ET), TIME_ENUM},
+    {&(RES0__INSTANCE0.TOF2.STATE), SINT_ENUM},
+    {&(RES0__INSTANCE0.TOF2.PREV_IN), BOOL_ENUM},
+    {&(RES0__INSTANCE0.TOF2.CURRENT_TIME), TIME_ENUM},
+    {&(RES0__INSTANCE0.TOF2.START_TIME), TIME_ENUM},
     {&(RES0__INSTANCE0.LID_AT_PLACE), BOOL_P_ENUM},
     {&(RES0__INSTANCE0.LID_CLAMPED), BOOL_P_ENUM},
     {&(RES0__INSTANCE0.BASE_AT_PLACE), BOOL_P_ENUM},
@@ -141,9 +111,10 @@ static const struct {
     {&(RES0__INSTANCE0.MOVE_X), BOOL_O_ENUM},
     {&(RES0__INSTANCE0.MOVE_Z), BOOL_O_ENUM},
     {&(RES0__INSTANCE0.GRAB), BOOL_O_ENUM},
+    {&(RES0__INSTANCE0.START), BOOL_P_ENUM},
 };
 
-#define VAR_COUNT               97
+#define VAR_COUNT               68
 
 uint16_t get_var_count(void)
 {
@@ -157,14 +128,14 @@ size_t get_var_size(size_t idx)
         return 0;
     }
     switch (debug_vars[idx].type) {
-    case TIME_ENUM:
-        return sizeof(TIME);
     case BOOL_ENUM:
     case BOOL_O_ENUM:
     case BOOL_P_ENUM:
         return sizeof(BOOL);
     case SINT_ENUM:
         return sizeof(SINT);
+    case TIME_ENUM:
+        return sizeof(TIME);
     default:
         return 0;
     }
@@ -175,8 +146,6 @@ void *get_var_addr(size_t idx)
     void *ptr = debug_vars[idx].ptr;
 
     switch (debug_vars[idx].type) {
-    case TIME_ENUM:
-        return (void *)&((__IEC_TIME_t *) ptr)->value;
     case BOOL_ENUM:
         return (void *)&((__IEC_BOOL_t *) ptr)->value;
     case BOOL_O_ENUM:
@@ -186,6 +155,8 @@ void *get_var_addr(size_t idx)
                         : ((__IEC_BOOL_p *) ptr)->value);
     case SINT_ENUM:
         return (void *)&((__IEC_SINT_t *) ptr)->value;
+    case TIME_ENUM:
+        return (void *)&((__IEC_TIME_t *) ptr)->value;
     default:
         return 0;
     }
@@ -198,12 +169,6 @@ void force_var(size_t idx, bool forced, void *val)
     if (forced) {
         size_t var_size = get_var_size(idx);
         switch (debug_vars[idx].type) {
-        case TIME_ENUM: {
-            memcpy(&((__IEC_TIME_t *) ptr)->value, val, var_size);
-            ((__IEC_TIME_t *) ptr)->flags |= __IEC_FORCE_FLAG;
-            break;
-        }
-    
         case BOOL_ENUM: {
             memcpy(&((__IEC_BOOL_t *) ptr)->value, val, var_size);
             ((__IEC_BOOL_t *) ptr)->flags |= __IEC_FORCE_FLAG;
@@ -227,14 +192,17 @@ void force_var(size_t idx, bool forced, void *val)
             break;
         }
     
+        case TIME_ENUM: {
+            memcpy(&((__IEC_TIME_t *) ptr)->value, val, var_size);
+            ((__IEC_TIME_t *) ptr)->flags |= __IEC_FORCE_FLAG;
+            break;
+        }
+    
         default:
             break;
         }
     } else {
         switch (debug_vars[idx].type) {
-        case TIME_ENUM:
-            ((__IEC_TIME_t *) ptr)->flags &= ~__IEC_FORCE_FLAG;
-            break;
         case BOOL_ENUM:
             ((__IEC_BOOL_t *) ptr)->flags &= ~__IEC_FORCE_FLAG;
             break;
@@ -244,6 +212,9 @@ void force_var(size_t idx, bool forced, void *val)
             break;
         case SINT_ENUM:
             ((__IEC_SINT_t *) ptr)->flags &= ~__IEC_FORCE_FLAG;
+            break;
+        case TIME_ENUM:
+            ((__IEC_TIME_t *) ptr)->flags &= ~__IEC_FORCE_FLAG;
             break;
         default:
             break;

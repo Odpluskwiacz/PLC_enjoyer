@@ -193,6 +193,8 @@ void glueVars()
     
     bool_output_ptr[100][7] = (IEC_BOOL *)__QX100_7;
     
+    bool_input_ptr[101][0] = (IEC_BOOL *)__IX101_0;
+    
 }
 
 void updateTime()
